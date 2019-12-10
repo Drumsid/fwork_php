@@ -1,0 +1,1 @@
+<p>Show page <span style = "color: red;">this header from views/news/show.php</span></p>

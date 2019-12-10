@@ -8,10 +8,10 @@ class MainController extends Controller
 {
     public function indexAction()
     {
-        echo "Page Index";
+        $this->view->render('Главная страница');
     }
     public function contactAction()
     {
-        echo "Page Contact";
+        $this->view->render('Контакты');
     }
 }

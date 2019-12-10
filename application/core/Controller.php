@@ -2,14 +2,16 @@
 
 namespace application\core;
 
+use application\core\View;
+
 abstract class Controller
 {
-    public $params;
+    public $route;
+    public $view;
 
-    public function __construct($params)
+    public function __construct($route)
     {
-        $this->params = $params;
-        echo "Hello" . PHP_EOL;
-        var_dump($this->params);
+        $this->route = $route;
+        $this->view = new View($route);
     }
 }
