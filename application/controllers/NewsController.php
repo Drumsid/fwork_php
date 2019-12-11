@@ -7,7 +7,12 @@ use application\core\Controller;
 class NewsController extends Controller
 {
     public function showAction()
-    {
-        $this->view->render('Show page');
+    {    
+        $vars = [
+            'name' => "Johnny",
+            'age' => 35
+        ];
+        // var_dump($vars);
+        $this->view->render('Show page test', $vars);
     }
 }

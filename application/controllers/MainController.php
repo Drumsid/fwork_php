@@ -12,6 +12,7 @@ class MainController extends Controller
     }
     public function contactAction()
     {
+        // $this->view->redirect('/');
         $this->view->render('Контакты');
     }
 }

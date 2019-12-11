@@ -1,6 +1,7 @@
 <?php
 
 namespace application\core;
+use application\core\View;
 
 class Router
 {
@@ -42,13 +43,15 @@ class Router
 				 if(method_exists($pathToController, $action)){
 					 $controller = new $pathToController($this->params);
 					 $controller->$action();
+				 } else {
+					 View::errorCode(404);
 				 }
              } else {
-             	echo $pathToController . " not found";
+				View::errorCode(404);
              }
 
     	} else {
-    		echo "NO";
+    		View::errorCode(404);
     	}
     }    
 
