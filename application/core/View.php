@@ -28,7 +28,6 @@ class View
         } else {
             echo "Вид не найден: " . $this->path;
         }
-
     }
 
     public function redirect($url)
@@ -41,9 +40,19 @@ class View
     {
         http_response_code($code);
         $pathToError = 'application/views/errors/' . $code . '.php';
-        if (file_exists($pathToError)){
+        if (file_exists($pathToError)) {
             require $pathToError;
         }
         exit;
+    }
+
+    public function message($status, $message)
+    {
+        exit(json_encode(['status' => $status, 'message' => $message]));
+    }
+
+    public function location($url)
+    {
+        exit(json_encode(['url' => $url]));
     }
 }
